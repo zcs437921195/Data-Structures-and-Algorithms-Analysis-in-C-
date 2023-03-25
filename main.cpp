@@ -11,19 +11,20 @@
 #include <time.h>
 #include "MyVector.h"
 #include "MyList.h"
+#include "Chapter3.h"
 using namespace std;
 
 
 int main(int argc, const char * argv[]) {
-    Vector<int> x(100);
-    cout << x.size() << endl;
-    List<int> a;
-    List<int> b{a};
+    // Vector<int> x(100);
+    // cout << x.size() << endl;
 //    clock_t start, end;
 //    start = clock();
 //    removeEveryOtherItem(x);
 //    end = clock();
 //    cout << "list time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
-    cout << 1 << endl;
+    list<int> a{11, 5, -3, 2, 1, 43, 542, 5, -2, 9};
+    list<int> b{2, 4, 5, 6};
+    printLots(a, b);
     return 0;
 }
