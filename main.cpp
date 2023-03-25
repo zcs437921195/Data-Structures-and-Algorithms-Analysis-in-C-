@@ -24,5 +24,6 @@ int main(int argc, const char * argv[]) {
 //    removeEveryOtherItem(x);
 //    end = clock();
 //    cout << "list time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
+    cout << 1 << endl;
     return 0;
 }
