@@ -28,5 +28,13 @@ void printLots(list<Object> L, list<int> P){
     }
 }
 
+template<typename Iterator, typename Object>
+Iterator find(Iterator start, Iterator end, const Object & x){
+    Iterator cur = start;
+    while (cur != end && *cur != x)
+        cur++;
+    return cur;
+}
+
 
 #endif /* Chapter3_h */
