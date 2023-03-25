@@ -36,5 +36,60 @@ Iterator find(Iterator start, Iterator end, const Object & x){
     return cur;
 }
 
+template<typename Object>
+list<Object> GetInterList(const list<Object> & l1, const list<Object> & l2){
+    list<Object> res;
+    typename list<Object>::const_iterator ite1;
+    typename list<Object>::const_iterator ite2;
+    ite1 = l1.cbegin();
+    ite2 = l2.cbegin();
+    while (ite1 != l1.cend() && ite2 != l2.cend()) {
+        if (*ite1 > *ite2)
+            ite2++;
+        else if (*ite1 < *ite2)
+            ite1++;
+        else{
+            res.push_back(Object{*ite1});
+            ite1++;
+            ite2++;
+        }
+    }
+    return res;
+}
+
+
+template<typename Object>
+list<Object> GetUnionList(const list<Object> & l1, const list<Object> & l2){
+    list<Object> res;
+    typename list<Object>::const_iterator ite1;
+    typename list<Object>::const_iterator ite2;
+    ite1 = l1.cbegin();
+    ite2 = l2.cbegin();
+    while (ite1 != l1.cend() && ite2 != l2.cend()) {
+        if (*ite1 > *ite2){
+            res.push_back(Object{*ite2});
+            ite2++;
+        }
+        else if (*ite1 < *ite2){
+            res.push_back(Object{*ite1});
+            ite1++;
+        }
+        else{
+            res.push_back(Object{*ite1});
+            ite1++;
+            ite2++;
+        }
+    }
+    while (ite1 != l1.cend()) {
+        res.push_back(Object{*ite1});
+        ite1++;
+    }
+    while (ite2 != l2.cend()) {
+        res.push_back(Object{*ite2});
+        ite2++;
+    }
+    return res;
+}
+
 
 #endif /* Chapter3_h */
