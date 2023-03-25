@@ -36,8 +36,6 @@ Iterator find(Iterator start, Iterator end, const Object & x){
     return cur;
 }
 
-<<<<<<< HEAD
-=======
 template<typename Object>
 list<Object> GetInterList(const list<Object> & l1, const list<Object> & l2){
     list<Object> res;
@@ -93,6 +91,5 @@ list<Object> GetUnionList(const list<Object> & l1, const list<Object> & l2){
     return res;
 }
 
->>>>>>> write_code
 
 #endif /* Chapter3_h */
