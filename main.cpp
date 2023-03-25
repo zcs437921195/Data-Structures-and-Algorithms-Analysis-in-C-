@@ -9,8 +9,8 @@
 #include <vector>
 #include <list>
 #include <time.h>
-#include "MyVector.h"
-#include "MyList.h"
+// #include "MyVector.h"
+// #include "MyList.h"
 #include "Chapter3.h"
 using namespace std;
 
@@ -23,8 +23,11 @@ int main(int argc, const char * argv[]) {
 //    removeEveryOtherItem(x);
 //    end = clock();
 //    cout << "list time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
-    list<int> a{11, 5, -3, 2, 1, 43, 542, 5, -2, 9};
-    list<int> b{2, 4, 5, 6};
-    printLots(a, b);
+    list<int> a{-11, -5, -3, -2, 1, 3, 4, 5, 8, 9};
+    list<int> b{-3, 4, 5, 6};
+    // list<int> c = GetInterList(a, b);
+    list<int> c = GetUnionList(a, b);
+    for (list<int>::const_iterator p = c.cbegin(); p != c.cend(); p++)
+        cout << *p << endl;
     return 0;
 }
